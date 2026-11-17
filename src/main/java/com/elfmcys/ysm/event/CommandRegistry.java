@@ -1,0 +1,89 @@
+package com.elfmcys.ysm.event;
+
+import com.elfmcys.ysm.YesSteveModel;
+import com.elfmcys.ysm.client.command.ClientRootCommand;
+import com.elfmcys.ysm.client.model.ClientModelService;
+import com.elfmcys.ysm.command.RootCommand;
+import com.elfmcys.ysm.model.server.ServerModelService;
+import com.google.common.collect.Sets;
+import com.mojang.brigadier.StringReader;
+import com.mojang.brigadier.suggestion.SuggestionProvider;
+import com.mojang.brigadier.suggestion.Suggestions;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.SharedSuggestionProvider;
+import net.minecraft.commands.synchronization.SuggestionProviders;
+import net.minecraft.resources.Identifier;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.loader.api.FabricLoader;
+
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public final class CommandRegistry {
+    public static final SuggestionProvider<CommandSourceStack> ALL_MODELS = SuggestionProviders.register(Identifier.fromNamespaceAndPath(YesSteveModel.MOD_ID, "models"), (source, builder) -> {
+        if (source.getSource() instanceof SharedSuggestionProvider) {
+            var paths = ServerModelService.current().flatMap(ServerModelService::snapshot)
+                    .map(snapshot -> snapshot.models().values().stream()
+                            .map(handle -> handle.location().path().value()).distinct()
+                            .map(CommandRegistry::filterSuggestionStr).toList()).orElse(List.of());
+            return SharedSuggestionProvider.suggest(paths, builder);
+        } else {
+            return Suggestions.empty();
+        }
+    });
+
+    public static final SuggestionProvider<CommandSourceStack> ALL_ANIMATIONS = SuggestionProviders.register(Identifier.fromNamespaceAndPath(YesSteveModel.MOD_ID, "animations"), (source, builder) -> {
+        if (source.getSource() instanceof SharedSuggestionProvider) {
+            if (FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER) {
+                // Fixme: 应该为服务器后台也添加提示功能
+                return Suggestions.empty();
+            } else {
+                var main = ClientModelService.instance().defaultRenderTarget().playerResources().animations();
+                Set<String> animations = Sets.newHashSet();
+                animations.addAll(main.keySet().stream().map(CommandRegistry::filterSuggestionStr).toList());
+                animations.add("stop");
+                return SharedSuggestionProvider.suggest(animations, builder);
+            }
+        } else {
+            return Suggestions.empty();
+        }
+    });
+
+    public static final SuggestionProvider<CommandSourceStack> ALL_TEXTURES = SuggestionProviders.register(Identifier.fromNamespaceAndPath(YesSteveModel.MOD_ID, "textures"), (source, builder) -> {
+        if (source.getSource() instanceof SharedSuggestionProvider) {
+            String modelPath = source.getArgument("model_path", String.class);
+            var model = ServerModelService.current().flatMap(ServerModelService::snapshot)
+                    .flatMap(snapshot -> snapshot.findPath(modelPath));
+            if (model.isPresent()) {
+                List<String> textures = model.get().descriptor().view().getPlayer().getTextureNames().stream()
+                        .sorted()
+                        .map(CommandRegistry::filterSuggestionStr).collect(Collectors.toList());
+                textures.add(0, "-");
+                return SharedSuggestionProvider.suggest(textures, builder);
+            }
+        }
+        return Suggestions.empty();
+    });
+
+    public static void register() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            if (!YesSteveModel.isAvailable()) {
+                RootCommand.registerPlaceholder(dispatcher);
+                return;
+            }
+            RootCommand.register(dispatcher);
+            if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
+                ClientRootCommand.register(dispatcher);
+            }
+        });
+    }
+
+    private static String filterSuggestionStr(String str) {
+        if (str.chars().allMatch(c -> StringReader.isAllowedInUnquotedString((char) c))) {
+            return str;
+        }
+        return String.format("\"%s\"", str.replace("\"", "\\\"").replace("'", "\\'"));
+    }
+}

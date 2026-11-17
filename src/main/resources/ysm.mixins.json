@@ -1,0 +1,45 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.elfmcys.ysm.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "refmap": "ysm.refmap.json",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "client.InputConstantsMixin",
+    "client.SoundEngineMixin",
+    "client.KeyboardHandlerMixin",
+    "client.MouseHandlerMixin",
+    "client.ClientPacketListenerMixin",
+    "client.EntityRenderDispatcherMixin",
+    "client.EntityRenderDispatcherExtractMixin",
+    "client.EntityRenderDispatcherAccessor",
+    "client.EntityRenderStateLinkMixin",
+    "client.EntityRendererCreateStateMixin",
+    "client.GuiGraphicsExtractorAccessor",
+    "client.GuiRendererMixin",
+    "client.GameRendererProjectionMixin",
+    "client.ProjectionMatrixBufferMixin",
+    "client.GpuBufferSliceMixin",
+    "client.LevelRendererMixin",
+    "client.ArrowEntityAccessor",
+    "client.FishingHookAccessor",
+    "client.ThrowableItemProjectileAccessor",
+    "client.NativeImageAccessor",
+    "client.ScreenAccessor",
+    "client.BufferBuilderMixin",
+    "client.ItemInHandRendererMixin"
+  ],
+  "mixins": [
+    "AbstractArrowEntityMixin",
+    "ProjectileEntityMixin",
+    "ServerPlayerMixin",
+    "ConnectionAttributeMixin",
+    "EntityCapabilityMixin",
+    "LivingEntityEffectMixin",
+    "LivingEntityShieldMixin",
+    "ServerCommonPacketListenerAccessor"
+  ]
+}

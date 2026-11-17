@@ -1,0 +1,1308 @@
+{
+  "formatVersion": 1,
+  "models": [
+    {
+      "path": "default",
+      "modelHash": "85361cb6e6678d993809781f7637fa8d8b6f6a9a470c28a351f757429144db9d"
+    },
+    {
+      "path": "grass_block",
+      "modelHash": "973c493f1ede12c1486e061cbab31908539f831168627c169ffe0cc88d18fc0a"
+    },
+    {
+      "path": "mamehinata",
+      "modelHash": "0fc7afbfc236a338b1040b7f27b30b3098e83a935553647efe41ad5d7b2bde8c"
+    },
+    {
+      "path": "mili",
+      "modelHash": "731a5eb6ce222d8bcd7937c13d300ff128b517f48b053d22f65a1b1f2ce1dd38"
+    },
+    {
+      "path": "misc/1_alex",
+      "modelHash": "5b34dfdd009020813daed940da9b5cf0901db78d93dacab09dfae40bfa711063"
+    },
+    {
+      "path": "misc/2_steve",
+      "modelHash": "7facb39bc6292e81356827bc53a02cbfb869be804fcbb529c761e957b9d2a11a"
+    },
+    {
+      "path": "misc/3_default_boy",
+      "modelHash": "4342038338b4a315148bd43437a251ea3a9db542b4815ca3aac7d5a87d10b459"
+    },
+    {
+      "path": "misc/4_default_controllers",
+      "modelHash": "751449295fa9582053adf87b01aed274406090f23ae3495212e8a6cd3a4b9cb5"
+    },
+    {
+      "path": "reme",
+      "modelHash": "c070c7535805e6d40efb91c6dbe710195ccd34cea067465b28045e5a89d09aae"
+    }
+  ],
+  "defaultAnimations": [
+    {
+      "domain": "player/main",
+      "name": "AvgnDance",
+      "currentPayloadHash": "98e8a421c50a5bd40a5be31e4b8d42d8c0f11b2479c2306de4f6b548f1a19c22",
+      "acceptedPayloadHashes": [
+        "98e8a421c50a5bd40a5be31e4b8d42d8c0f11b2479c2306de4f6b548f1a19c22"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "attacked",
+      "currentPayloadHash": "8d248fb67c544fee64ff76f9ffe474cde8152a3f570169ed0646bcc62fd1d662",
+      "acceptedPayloadHashes": [
+        "8d248fb67c544fee64ff76f9ffe474cde8152a3f570169ed0646bcc62fd1d662"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "boat",
+      "currentPayloadHash": "3152e1bc4dfd98a3ede64ca9bac82f5111913d60022c8407ad28bc9954260c59",
+      "acceptedPayloadHashes": [
+        "3152e1bc4dfd98a3ede64ca9bac82f5111913d60022c8407ad28bc9954260c59"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "climb",
+      "currentPayloadHash": "ab633a7daf04f4c76150f65645f9dae121f71542430256491efeeacbac47ba90",
+      "acceptedPayloadHashes": [
+        "ab633a7daf04f4c76150f65645f9dae121f71542430256491efeeacbac47ba90"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "climbing",
+      "currentPayloadHash": "3c2e0e1c95a3554a000bf326f53a58263d22519ec1069aba577333696c7d02c6",
+      "acceptedPayloadHashes": [
+        "3c2e0e1c95a3554a000bf326f53a58263d22519ec1069aba577333696c7d02c6"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "death",
+      "currentPayloadHash": "e3d5ec9a8b9e5e5b6e13b9eb19c5003fbdbf963f8f7ba20ceb76b10bc5556bcf",
+      "acceptedPayloadHashes": [
+        "e3d5ec9a8b9e5e5b6e13b9eb19c5003fbdbf963f8f7ba20ceb76b10bc5556bcf"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "elytra_fly",
+      "currentPayloadHash": "73508461321bd959ccd4fbb3f9e5b065bfa6076d602b0f0577414ed158fca2fc",
+      "acceptedPayloadHashes": [
+        "73508461321bd959ccd4fbb3f9e5b065bfa6076d602b0f0577414ed158fca2fc"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "empty",
+      "currentPayloadHash": "c10b6fda7e6336b7113e6f54b7c4bef869b8e1cb74da9738b213c884b0c2078d",
+      "acceptedPayloadHashes": [
+        "c10b6fda7e6336b7113e6f54b7c4bef869b8e1cb74da9738b213c884b0c2078d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra0",
+      "currentPayloadHash": "6c7d15bdd0a3ee7602522562f152c9c62dc08a6db15ee383fb95de2f45f55217",
+      "acceptedPayloadHashes": [
+        "6c7d15bdd0a3ee7602522562f152c9c62dc08a6db15ee383fb95de2f45f55217"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra1",
+      "currentPayloadHash": "58db4a1b1f382b7192d79b6ad85d3d7583582d781a7c4aea5b451405a46db9c0",
+      "acceptedPayloadHashes": [
+        "58db4a1b1f382b7192d79b6ad85d3d7583582d781a7c4aea5b451405a46db9c0"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra2",
+      "currentPayloadHash": "6dfad65759544e26567e7b20d62efc63c75cebef449f7cf12ad8174ebd2dc206",
+      "acceptedPayloadHashes": [
+        "6dfad65759544e26567e7b20d62efc63c75cebef449f7cf12ad8174ebd2dc206"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra3",
+      "currentPayloadHash": "b5c24620ed5b3034cf3fd938bdb5ae2872ce540cb529e5dd7c8757de61d6243b",
+      "acceptedPayloadHashes": [
+        "b5c24620ed5b3034cf3fd938bdb5ae2872ce540cb529e5dd7c8757de61d6243b"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra4",
+      "currentPayloadHash": "73bdb374915cfba0f83b60b73cdfc0da98f54697b48ed802765611d5b3ca7569",
+      "acceptedPayloadHashes": [
+        "73bdb374915cfba0f83b60b73cdfc0da98f54697b48ed802765611d5b3ca7569"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra5",
+      "currentPayloadHash": "15554edd09246ece5f61bd98b1b8af5a57bcde3fb4a871e65b5eb4c402a1f56d",
+      "acceptedPayloadHashes": [
+        "15554edd09246ece5f61bd98b1b8af5a57bcde3fb4a871e65b5eb4c402a1f56d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra6",
+      "currentPayloadHash": "ddfee84d00e3ae93d7659fbaaa332753faf1d5e157be7a87c5471dbaeb0b6c28",
+      "acceptedPayloadHashes": [
+        "ddfee84d00e3ae93d7659fbaaa332753faf1d5e157be7a87c5471dbaeb0b6c28"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "extra7",
+      "currentPayloadHash": "20b22e1938b07f1c7dee96188ba775de37c6163993ed1f056bf2a1c6a8397c8f",
+      "acceptedPayloadHashes": [
+        "20b22e1938b07f1c7dee96188ba775de37c6163993ed1f056bf2a1c6a8397c8f"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "fly",
+      "currentPayloadHash": "9f3c89be8d1798aa50e040b9daca3ed58745ad2cab70b72cfd69edfbf014e273",
+      "acceptedPayloadHashes": [
+        "9f3c89be8d1798aa50e040b9daca3ed58745ad2cab70b72cfd69edfbf014e273"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "gui",
+      "currentPayloadHash": "5589c14e6f9d3d0f3764587dc71c46d2226181b71f4c20762b0b388d9807c266",
+      "acceptedPayloadHashes": [
+        "5589c14e6f9d3d0f3764587dc71c46d2226181b71f4c20762b0b388d9807c266"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "hold_mainhand:slashblade",
+      "currentPayloadHash": "4a80c23890c0fef4d9e4ef63403d08f7bc4af588791c6443664835478f6f30f4",
+      "acceptedPayloadHashes": [
+        "4a80c23890c0fef4d9e4ef63403d08f7bc4af588791c6443664835478f6f30f4"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "hold_offhand:slashblade",
+      "currentPayloadHash": "4e6e0ecf8418f5cf99386d29f169398721bfc924bd490d79bc994fcf7bc169b6",
+      "acceptedPayloadHashes": [
+        "4e6e0ecf8418f5cf99386d29f169398721bfc924bd490d79bc994fcf7bc169b6"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "idle",
+      "currentPayloadHash": "89596e6a2ebbd394004d8779cfcb4b143c3868bde2e5075c4c50d092976d3384",
+      "acceptedPayloadHashes": [
+        "89596e6a2ebbd394004d8779cfcb4b143c3868bde2e5075c4c50d092976d3384"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "jump",
+      "currentPayloadHash": "5bf83360c41cef6f5a0532d5af6ca5054198b05b75985a6a4eff35d0728e5f68",
+      "acceptedPayloadHashes": [
+        "5bf83360c41cef6f5a0532d5af6ca5054198b05b75985a6a4eff35d0728e5f68"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "ladder_down",
+      "currentPayloadHash": "228ce2005062e5c6f5c08cea509655f976373905f08130825a2defe57214db53",
+      "acceptedPayloadHashes": [
+        "228ce2005062e5c6f5c08cea509655f976373905f08130825a2defe57214db53"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "ladder_stillness",
+      "currentPayloadHash": "6da9bc5fd46f3fd8bc44bcc7eb1b34bab835f5cafbafe0264831620c56fa0495",
+      "acceptedPayloadHashes": [
+        "6da9bc5fd46f3fd8bc44bcc7eb1b34bab835f5cafbafe0264831620c56fa0495"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "ladder_up",
+      "currentPayloadHash": "0407e9afbb6aef7a15dba182cd11ac25651caf4dae9ef4990f29918596ad47eb",
+      "acceptedPayloadHashes": [
+        "0407e9afbb6aef7a15dba182cd11ac25651caf4dae9ef4990f29918596ad47eb"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel0",
+      "currentPayloadHash": "fcdaf5ded9a0e30e54023c69ea10d461c0ff366d704bb41a60ec538ebe4637c2",
+      "acceptedPayloadHashes": [
+        "fcdaf5ded9a0e30e54023c69ea10d461c0ff366d704bb41a60ec538ebe4637c2"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel1",
+      "currentPayloadHash": "89a52296745c55c59492f9305a80ff5f719b3d03cd2e5d41e2e4df909dec3fbf",
+      "acceptedPayloadHashes": [
+        "89a52296745c55c59492f9305a80ff5f719b3d03cd2e5d41e2e4df909dec3fbf"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel2",
+      "currentPayloadHash": "1679fba65b9682b3dc3566b8dfcf7d0fe4628f4fa82fc860ac18e39800e902d4",
+      "acceptedPayloadHashes": [
+        "1679fba65b9682b3dc3566b8dfcf7d0fe4628f4fa82fc860ac18e39800e902d4"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel3",
+      "currentPayloadHash": "c35a18960f6b469e4c37c1fc103a8cab0a95509a60f67e81e871014fb63b2f71",
+      "acceptedPayloadHashes": [
+        "c35a18960f6b469e4c37c1fc103a8cab0a95509a60f67e81e871014fb63b2f71"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel4",
+      "currentPayloadHash": "8da31c66632544abc3ff75c5a77580ad07867f1979939485717c240bbe8892b5",
+      "acceptedPayloadHashes": [
+        "8da31c66632544abc3ff75c5a77580ad07867f1979939485717c240bbe8892b5"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel5",
+      "currentPayloadHash": "6a84b71538b5005ac7023512e2aced3ff1545eca6315fb45e17f7ec77ff95a80",
+      "acceptedPayloadHashes": [
+        "6a84b71538b5005ac7023512e2aced3ff1545eca6315fb45e17f7ec77ff95a80"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel6",
+      "currentPayloadHash": "e9fe5b1e12f016ca7ba3c401344752ad23d3745eb1bd1bb715020045070563cf",
+      "acceptedPayloadHashes": [
+        "e9fe5b1e12f016ca7ba3c401344752ad23d3745eb1bd1bb715020045070563cf"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "parallel7",
+      "currentPayloadHash": "777be0399881402b75ed5b301a857e5917dac2223c4ac9490e9e6e5b63d89f4f",
+      "acceptedPayloadHashes": [
+        "777be0399881402b75ed5b301a857e5917dac2223c4ac9490e9e6e5b63d89f4f"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel0",
+      "currentPayloadHash": "1da04ebc0324da473077e447208a96cefdf96f752924f592bd3d9c192f76fe93",
+      "acceptedPayloadHashes": [
+        "1da04ebc0324da473077e447208a96cefdf96f752924f592bd3d9c192f76fe93"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel1",
+      "currentPayloadHash": "e723f704b29d0cc2a883802d8b910cdb879c0b3473f0ddd448ad2abb0520f176",
+      "acceptedPayloadHashes": [
+        "e723f704b29d0cc2a883802d8b910cdb879c0b3473f0ddd448ad2abb0520f176"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel2",
+      "currentPayloadHash": "161a12ff443a793dcb6c30a688e6c2d90beacdbaeccf01f8fda24d57ec28a835",
+      "acceptedPayloadHashes": [
+        "161a12ff443a793dcb6c30a688e6c2d90beacdbaeccf01f8fda24d57ec28a835"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel3",
+      "currentPayloadHash": "40982eb8ed3420c2bfe8e53ea4a97ea2bcf6ca0efcbaa9ee24478c7c2d69b1bd",
+      "acceptedPayloadHashes": [
+        "40982eb8ed3420c2bfe8e53ea4a97ea2bcf6ca0efcbaa9ee24478c7c2d69b1bd"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel4",
+      "currentPayloadHash": "5f92e1a8f48776a71de972be9d877f3a3beb81330133891e11b310eca80f7657",
+      "acceptedPayloadHashes": [
+        "5f92e1a8f48776a71de972be9d877f3a3beb81330133891e11b310eca80f7657"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel5",
+      "currentPayloadHash": "91bba0b809aa95728d5540af603f2ad27a44d50be03272c1798ba8dfcd6cab22",
+      "acceptedPayloadHashes": [
+        "91bba0b809aa95728d5540af603f2ad27a44d50be03272c1798ba8dfcd6cab22"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel6",
+      "currentPayloadHash": "fd6518c490928fbd5f47b545d1bd85332c0d4693abf4b1a382853037b70970f9",
+      "acceptedPayloadHashes": [
+        "fd6518c490928fbd5f47b545d1bd85332c0d4693abf4b1a382853037b70970f9"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "pre_parallel7",
+      "currentPayloadHash": "f91ad005846d4c497a845fa5456985767ee5cc6a76dfedcd55218280cba59e28",
+      "acceptedPayloadHashes": [
+        "f91ad005846d4c497a845fa5456985767ee5cc6a76dfedcd55218280cba59e28"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "ride",
+      "currentPayloadHash": "1d0060f689eea1d1a866af4d1a66636a4d7ecc7d2eb122151a4fa61fe2cc089a",
+      "acceptedPayloadHashes": [
+        "1d0060f689eea1d1a866af4d1a66636a4d7ecc7d2eb122151a4fa61fe2cc089a"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "ride_pig",
+      "currentPayloadHash": "ed12dcf10bf562bab5f6db0665ab6835892a3ad26e2a68a5112e62edf91eebdb",
+      "acceptedPayloadHashes": [
+        "ed12dcf10bf562bab5f6db0665ab6835892a3ad26e2a68a5112e62edf91eebdb"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "riptide",
+      "currentPayloadHash": "03ac880d3d6f1e0dc8e6973ad296055f26b3147b928906c17132835f162f6396",
+      "acceptedPayloadHashes": [
+        "03ac880d3d6f1e0dc8e6973ad296055f26b3147b928906c17132835f162f6396"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "run",
+      "currentPayloadHash": "3c58e7f9c7c893462186a1376624ec17632706666351602945449888798868af",
+      "acceptedPayloadHashes": [
+        "3c58e7f9c7c893462186a1376624ec17632706666351602945449888798868af"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "sit",
+      "currentPayloadHash": "3b11c544eaea38f0acb73aac08357d0b5808fea5c21a03cb76dee1a4873bdab9",
+      "acceptedPayloadHashes": [
+        "3b11c544eaea38f0acb73aac08357d0b5808fea5c21a03cb76dee1a4873bdab9"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_cleave_landing",
+      "currentPayloadHash": "3b48e7a1d205f2b1c2151e1be39a7f6bcaeb16adacf90b39b338e98aa271f3ae",
+      "acceptedPayloadHashes": [
+        "3b48e7a1d205f2b1c2151e1be39a7f6bcaeb16adacf90b39b338e98aa271f3ae"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_cleave_loop",
+      "currentPayloadHash": "841730981a3550fe45ec7d67cf0d7adc639864ac10af062cdd540a9a30b8e977",
+      "acceptedPayloadHashes": [
+        "841730981a3550fe45ec7d67cf0d7adc639864ac10af062cdd540a9a30b8e977"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_rave_a1",
+      "currentPayloadHash": "bd7bc1b3dbc4a30ef692ae45efecb56ae2c910be9d2a7eb1133e4cdb1380774b",
+      "acceptedPayloadHashes": [
+        "bd7bc1b3dbc4a30ef692ae45efecb56ae2c910be9d2a7eb1133e4cdb1380774b"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_rave_a2",
+      "currentPayloadHash": "aff488685b463ca781f3ad5825ae4f1b062aefc050ec25c7bd00698293c62be0",
+      "acceptedPayloadHashes": [
+        "aff488685b463ca781f3ad5825ae4f1b062aefc050ec25c7bd00698293c62be0"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_rave_a3",
+      "currentPayloadHash": "78afe0f17555d27eb79dde3a56ab414099423dcb5be83a0f8ded7f5eb2d0b77b",
+      "acceptedPayloadHashes": [
+        "78afe0f17555d27eb79dde3a56ab414099423dcb5be83a0f8ded7f5eb2d0b77b"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_rave_b3",
+      "currentPayloadHash": "893e0fb69a8f28f9344b750935ff9506cef4f4e4a2f22cc7583e47bb5190776e",
+      "acceptedPayloadHashes": [
+        "893e0fb69a8f28f9344b750935ff9506cef4f4e4a2f22cc7583e47bb5190776e"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:aerial_rave_b4",
+      "currentPayloadHash": "789997c6ba0e50c70caf9a61ee20a26b49e6731cb2c87b012e1873647c98cef5",
+      "acceptedPayloadHashes": [
+        "789997c6ba0e50c70caf9a61ee20a26b49e6731cb2c87b012e1873647c98cef5"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:circle_slash",
+      "currentPayloadHash": "bc99defc7713e117589928157f23542e5e40b350cae3f4aadf3794607cf4ea00",
+      "acceptedPayloadHashes": [
+        "bc99defc7713e117589928157f23542e5e40b350cae3f4aadf3794607cf4ea00"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_a1",
+      "currentPayloadHash": "fe68586baedd5495f2ec0ff570721438dccc886f601468c00e3dd573465df7dc",
+      "acceptedPayloadHashes": [
+        "fe68586baedd5495f2ec0ff570721438dccc886f601468c00e3dd573465df7dc"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_a2",
+      "currentPayloadHash": "20006c93bedf9efce3adfd89832b4e6755d00c99c1e48dce561b2234c652ac53",
+      "acceptedPayloadHashes": [
+        "20006c93bedf9efce3adfd89832b4e6755d00c99c1e48dce561b2234c652ac53"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_a3",
+      "currentPayloadHash": "cedab16bf3d7613a4fe9a735711f21c000d15b7057826b71ec02043e73ece5ed",
+      "acceptedPayloadHashes": [
+        "cedab16bf3d7613a4fe9a735711f21c000d15b7057826b71ec02043e73ece5ed"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_a4",
+      "currentPayloadHash": "5c808dd9fd563ba52eb87a6fdb31ef1f0c537a8707540df83d0c7af382bd0bbb",
+      "acceptedPayloadHashes": [
+        "5c808dd9fd563ba52eb87a6fdb31ef1f0c537a8707540df83d0c7af382bd0bbb"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_a4ex",
+      "currentPayloadHash": "b17fbcc52c942dee4bf9018436becbff7e493be4bf11b0610c10a2d641330428",
+      "acceptedPayloadHashes": [
+        "b17fbcc52c942dee4bf9018436becbff7e493be4bf11b0610c10a2d641330428"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_a5ex",
+      "currentPayloadHash": "ddb2e56808f3f86b6122d5ee34f5accdb368f9e84fc453721db99a94bddce605",
+      "acceptedPayloadHashes": [
+        "ddb2e56808f3f86b6122d5ee34f5accdb368f9e84fc453721db99a94bddce605"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b1",
+      "currentPayloadHash": "5f64aaed3f2515ed0c426cd17a6b27d216e2c3e461371cda87ad9f801bb201e8",
+      "acceptedPayloadHashes": [
+        "5f64aaed3f2515ed0c426cd17a6b27d216e2c3e461371cda87ad9f801bb201e8"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b2",
+      "currentPayloadHash": "0fbbcab00b6eab18168d5a81ff2aac763a22353ae5e96df1ad4abc71a878b77d",
+      "acceptedPayloadHashes": [
+        "0fbbcab00b6eab18168d5a81ff2aac763a22353ae5e96df1ad4abc71a878b77d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b3",
+      "currentPayloadHash": "00950c83a96a66de33e15321e9e505c8798b3d430e8b296307041905de0762e5",
+      "acceptedPayloadHashes": [
+        "00950c83a96a66de33e15321e9e505c8798b3d430e8b296307041905de0762e5"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b4",
+      "currentPayloadHash": "994cee9ca2cfb29fa4b6d2e94e3c2b1f5cc9fd4ec2475c40234b6d9da750ad71",
+      "acceptedPayloadHashes": [
+        "994cee9ca2cfb29fa4b6d2e94e3c2b1f5cc9fd4ec2475c40234b6d9da750ad71"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b5",
+      "currentPayloadHash": "58a3a1c43e79fd32847a2dbf918183670040cc5be428c676ffe1e74f62a509ff",
+      "acceptedPayloadHashes": [
+        "58a3a1c43e79fd32847a2dbf918183670040cc5be428c676ffe1e74f62a509ff"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b6",
+      "currentPayloadHash": "482677816420c5574787dce845b7309fddffd0556838db27767f99f1689212f8",
+      "acceptedPayloadHashes": [
+        "482677816420c5574787dce845b7309fddffd0556838db27767f99f1689212f8"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_b7",
+      "currentPayloadHash": "8a61234dbbcdbfca72a110e448a2cf1330ed25115953e2ec34d037baabdbaa19",
+      "acceptedPayloadHashes": [
+        "8a61234dbbcdbfca72a110e448a2cf1330ed25115953e2ec34d037baabdbaa19"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:combo_c",
+      "currentPayloadHash": "04de4e52ac101f8ac1afd54b72c5835d149c5dfcd0769a52f20498abc7ddbec6",
+      "acceptedPayloadHashes": [
+        "04de4e52ac101f8ac1afd54b72c5835d149c5dfcd0769a52f20498abc7ddbec6"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:drive_horizontal",
+      "currentPayloadHash": "30fc16e67cfd9a9ae51fb419a4214353f0b24cab53458640acacc125516bce5e",
+      "acceptedPayloadHashes": [
+        "30fc16e67cfd9a9ae51fb419a4214353f0b24cab53458640acacc125516bce5e"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:drive_vertical",
+      "currentPayloadHash": "cf0e13b3982673557cc520aef4d8898f2eaed5d4cbe1bed1927322a8c16ba0cd",
+      "acceptedPayloadHashes": [
+        "cf0e13b3982673557cc520aef4d8898f2eaed5d4cbe1bed1927322a8c16ba0cd"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:fly",
+      "currentPayloadHash": "bfaedc37c6bc1ebc38ebda34a8f4bb03eef08eb9f95740218a56e7cd815a1719",
+      "acceptedPayloadHashes": [
+        "bfaedc37c6bc1ebc38ebda34a8f4bb03eef08eb9f95740218a56e7cd815a1719"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:idle",
+      "currentPayloadHash": "c6909843dbbffbb1be6560e2848504492f89db60fd6f82ba80cf527dbc10a4b7",
+      "acceptedPayloadHashes": [
+        "c6909843dbbffbb1be6560e2848504492f89db60fd6f82ba80cf527dbc10a4b7"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:judgement_cut",
+      "currentPayloadHash": "e8149c6bc3922d71d98d13cd22566ccaf3f115d36a11be06793272998d583f1b",
+      "acceptedPayloadHashes": [
+        "e8149c6bc3922d71d98d13cd22566ccaf3f115d36a11be06793272998d583f1b"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:judgement_cut_slash_air",
+      "currentPayloadHash": "e02844defcdf7ce496b081bf81d08f79be7bb852279e9d02cd7a1a9ed3c688bb",
+      "acceptedPayloadHashes": [
+        "e02844defcdf7ce496b081bf81d08f79be7bb852279e9d02cd7a1a9ed3c688bb"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:judgement_cut_slash_air_just2",
+      "currentPayloadHash": "23507727b7490783d74d5b75a0057e8bdce0e96e90673d041ea0ae500b75ed9d",
+      "acceptedPayloadHashes": [
+        "23507727b7490783d74d5b75a0057e8bdce0e96e90673d041ea0ae500b75ed9d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:judgement_cut_slash_just2",
+      "currentPayloadHash": "aa21890efbfd982ad8e931aa17f066f39a019c504c0332cc1a5080ceeaa7e291",
+      "acceptedPayloadHashes": [
+        "aa21890efbfd982ad8e931aa17f066f39a019c504c0332cc1a5080ceeaa7e291"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:jump",
+      "currentPayloadHash": "4bfb866fd9b7034de20f0dc7c89afea6e5d6a6b677b5ebfff756a012e7a43492",
+      "acceptedPayloadHashes": [
+        "4bfb866fd9b7034de20f0dc7c89afea6e5d6a6b677b5ebfff756a012e7a43492"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:none",
+      "currentPayloadHash": "b5f23e4c4f0455b0ad8de72987ed6956ae477ef2f33b9b938448d0fb6a6e9c80",
+      "acceptedPayloadHashes": [
+        "b5f23e4c4f0455b0ad8de72987ed6956ae477ef2f33b9b938448d0fb6a6e9c80"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:rapid_slash",
+      "currentPayloadHash": "b371540d2fb10d6bee42ab88822e0144ddabc302e0f5229c1337094fc962789d",
+      "acceptedPayloadHashes": [
+        "b371540d2fb10d6bee42ab88822e0144ddabc302e0f5229c1337094fc962789d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:rising_star",
+      "currentPayloadHash": "711df1de889f400c8f2530ec5aab9476790cef0a922e4da2da0e4a711b3e7736",
+      "acceptedPayloadHashes": [
+        "711df1de889f400c8f2530ec5aab9476790cef0a922e4da2da0e4a711b3e7736"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:run",
+      "currentPayloadHash": "d129482f3838ea1f0f26b4e71f07a55a68f3c8353cae4d5d415c72e6d8112ba2",
+      "acceptedPayloadHashes": [
+        "d129482f3838ea1f0f26b4e71f07a55a68f3c8353cae4d5d415c72e6d8112ba2"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:sakura_end_left",
+      "currentPayloadHash": "6f3b04d8808640550f727271ad6c5cfeff91ea9edd6f4ffff658c47b142306f0",
+      "acceptedPayloadHashes": [
+        "6f3b04d8808640550f727271ad6c5cfeff91ea9edd6f4ffff658c47b142306f0"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:slash_arts_jc",
+      "currentPayloadHash": "ac254cba1eaaf4c37a7acb91494e5c9a54f459a3900242e9cbd187074e61566b",
+      "acceptedPayloadHashes": [
+        "ac254cba1eaaf4c37a7acb91494e5c9a54f459a3900242e9cbd187074e61566b"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:sneak",
+      "currentPayloadHash": "11c270b049a060f279b951a9ca6468e561d217352b494a5b31a84c3d7b709884",
+      "acceptedPayloadHashes": [
+        "11c270b049a060f279b951a9ca6468e561d217352b494a5b31a84c3d7b709884"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:sneaking",
+      "currentPayloadHash": "ee36b276a82c262a7fae5ef2745f13a963fa7f7397ebc50d913c402179e75fe4",
+      "acceptedPayloadHashes": [
+        "ee36b276a82c262a7fae5ef2745f13a963fa7f7397ebc50d913c402179e75fe4"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:standby",
+      "currentPayloadHash": "49b216e22c79261e65515c9b9dcd824014c400d8957e2619a3ea52c8af73f7c0",
+      "acceptedPayloadHashes": [
+        "49b216e22c79261e65515c9b9dcd824014c400d8957e2619a3ea52c8af73f7c0"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:standby_inair",
+      "currentPayloadHash": "91c7108596aeba86b24ddf345626348654b9e141eb0f7d58b98fa3f27b492f6e",
+      "acceptedPayloadHashes": [
+        "91c7108596aeba86b24ddf345626348654b9e141eb0f7d58b98fa3f27b492f6e"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:upperslash",
+      "currentPayloadHash": "feeae738d70a196010a4e9b33ffcfd0bec315b674a6d2d1a1c898ffeebc5a6a4",
+      "acceptedPayloadHashes": [
+        "feeae738d70a196010a4e9b33ffcfd0bec315b674a6d2d1a1c898ffeebc5a6a4"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:upperslash_jump",
+      "currentPayloadHash": "2a6736649458139a34a12df826fe143c49dc0942072702fb01e6e7c6d715a1c7",
+      "acceptedPayloadHashes": [
+        "2a6736649458139a34a12df826fe143c49dc0942072702fb01e6e7c6d715a1c7"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:void_slash",
+      "currentPayloadHash": "f96604fdf780674604720b87ef664c4085cb433dc05b5b8fc1d4bfb1c14bda82",
+      "acceptedPayloadHashes": [
+        "f96604fdf780674604720b87ef664c4085cb433dc05b5b8fc1d4bfb1c14bda82"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:walk",
+      "currentPayloadHash": "3facb12bbd88bcd15b87667e4014495fe413d33bf308b06b5adf703ca4a44ea8",
+      "acceptedPayloadHashes": [
+        "3facb12bbd88bcd15b87667e4014495fe413d33bf308b06b5adf703ca4a44ea8"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade:wave_edge_vertical",
+      "currentPayloadHash": "c2e24a83e79ef8ea8ddccd0597d31529115c5b867a9d218b236f5a75f328ee05",
+      "acceptedPayloadHashes": [
+        "c2e24a83e79ef8ea8ddccd0597d31529115c5b867a9d218b236f5a75f328ee05"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade_addon:fire_spiral",
+      "currentPayloadHash": "63009b28c1d6ce79d455cbaab9eebb4878be86415a46119dcf7e9090c40f9cbd",
+      "acceptedPayloadHashes": [
+        "63009b28c1d6ce79d455cbaab9eebb4878be86415a46119dcf7e9090c40f9cbd"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade_addon:spiral_edge",
+      "currentPayloadHash": "96953355a66bdc65a752353cd846de94da4a0d0fa8ddba32c4d0cc543ca0ab5c",
+      "acceptedPayloadHashes": [
+        "96953355a66bdc65a752353cd846de94da4a0d0fa8ddba32c4d0cc543ca0ab5c"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "slashblade_addon:water_drive",
+      "currentPayloadHash": "d792fe2b5e5f5b006b139a0dda9fe82a94f79bbedf3196e4c08e0715b27b8a6d",
+      "acceptedPayloadHashes": [
+        "d792fe2b5e5f5b006b139a0dda9fe82a94f79bbedf3196e4c08e0715b27b8a6d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "sleep",
+      "currentPayloadHash": "d91ddc282d476f86e30d9c15fbb432b1a17f16439e9bccdc07b17224eaf270b5",
+      "acceptedPayloadHashes": [
+        "d91ddc282d476f86e30d9c15fbb432b1a17f16439e9bccdc07b17224eaf270b5"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "sneak",
+      "currentPayloadHash": "d4aaa5ddb86de3aa32d26f7a8b841966f95c01c32ebefd9d1d8525ba1929d4f1",
+      "acceptedPayloadHashes": [
+        "d4aaa5ddb86de3aa32d26f7a8b841966f95c01c32ebefd9d1d8525ba1929d4f1"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "sneaking",
+      "currentPayloadHash": "3d83f59921d137a838ab599645368a85f6a40a4c354e2567388709c6eca90222",
+      "acceptedPayloadHashes": [
+        "3d83f59921d137a838ab599645368a85f6a40a4c354e2567388709c6eca90222"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "swim",
+      "currentPayloadHash": "91c760ca003e3f28b2686cb404e968f19c7830a7e5741c735230f15e529b050c",
+      "acceptedPayloadHashes": [
+        "91c760ca003e3f28b2686cb404e968f19c7830a7e5741c735230f15e529b050c"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "swim_stand",
+      "currentPayloadHash": "92f476ceac1f2cd62ceb9b5cc11b1e0d3dfba5d726331807c9d5bff76b8ee8e8",
+      "acceptedPayloadHashes": [
+        "92f476ceac1f2cd62ceb9b5cc11b1e0d3dfba5d726331807c9d5bff76b8ee8e8"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "swing:slashblade",
+      "currentPayloadHash": "afd306e0a33e3cf3f8e22fb1fb7b383e6a9e5421275f05dfdf8c8a0249f7d9f1",
+      "acceptedPayloadHashes": [
+        "afd306e0a33e3cf3f8e22fb1fb7b383e6a9e5421275f05dfdf8c8a0249f7d9f1"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "swing_hand",
+      "currentPayloadHash": "4dc4b9358ea07afa8d979b3c18f598a6c0a26340241a2752fd945fa85876dbb3",
+      "acceptedPayloadHashes": [
+        "4dc4b9358ea07afa8d979b3c18f598a6c0a26340241a2752fd945fa85876dbb3"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "swing_offhand",
+      "currentPayloadHash": "b25d5301de9c26d0e12180e289102d853d7b2e179df52a12d533a21d111756d1",
+      "acceptedPayloadHashes": [
+        "b25d5301de9c26d0e12180e289102d853d7b2e179df52a12d533a21d111756d1"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim$tac:minigun",
+      "currentPayloadHash": "e874a9ddaeb3e1ae6e629f762f0341d549c735c20bb6d32c81c744a22d48eb37",
+      "acceptedPayloadHashes": [
+        "e874a9ddaeb3e1ae6e629f762f0341d549c735c20bb6d32c81c744a22d48eb37"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:fire$tac:minigun",
+      "currentPayloadHash": "945a8c8cf0be594d0475a968b4120629391accf2f32bb08a7d8cfb7e5997c08d",
+      "acceptedPayloadHashes": [
+        "945a8c8cf0be594d0475a968b4120629391accf2f32bb08a7d8cfb7e5997c08d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:fire:pistol",
+      "currentPayloadHash": "4ecc6e574544b3dedbdc0fcc2824e028a1fbed3de76fb0319c226eb2249e0d5a",
+      "acceptedPayloadHashes": [
+        "4ecc6e574544b3dedbdc0fcc2824e028a1fbed3de76fb0319c226eb2249e0d5a"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:fire:rifle",
+      "currentPayloadHash": "30b2fc9e7536217720d34be2a6547d1782ea8ce3c54085035b31ab4b41944468",
+      "acceptedPayloadHashes": [
+        "30b2fc9e7536217720d34be2a6547d1782ea8ce3c54085035b31ab4b41944468"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:fire:rpg",
+      "currentPayloadHash": "36d7b23c14dbc596402ff51395f63c6465a4d5f56afa5221fda55c8503e70c0f",
+      "acceptedPayloadHashes": [
+        "36d7b23c14dbc596402ff51395f63c6465a4d5f56afa5221fda55c8503e70c0f"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:pistol",
+      "currentPayloadHash": "8018eca7b45bd4b834ef4fa3183ebaddee2c409ad2db6aab782b71c3a4a79a7a",
+      "acceptedPayloadHashes": [
+        "8018eca7b45bd4b834ef4fa3183ebaddee2c409ad2db6aab782b71c3a4a79a7a"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:rifle",
+      "currentPayloadHash": "ac9a67e29d5461dd4ce14814d5289130b6dc39ea26d668adf37f47f6009783c1",
+      "acceptedPayloadHashes": [
+        "ac9a67e29d5461dd4ce14814d5289130b6dc39ea26d668adf37f47f6009783c1"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:aim:rpg",
+      "currentPayloadHash": "31e298df94588e972b1b735b4b9444e3dc7c7bf31e0c6636f3da71574a8eab97",
+      "acceptedPayloadHashes": [
+        "31e298df94588e972b1b735b4b9444e3dc7c7bf31e0c6636f3da71574a8eab97"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climb$tac:minigun",
+      "currentPayloadHash": "2da38f834a93a41098dd8acfe7e810823ac898c0cf79f9a45f800a65f24e7ba8",
+      "acceptedPayloadHashes": [
+        "2da38f834a93a41098dd8acfe7e810823ac898c0cf79f9a45f800a65f24e7ba8"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climb:pistol",
+      "currentPayloadHash": "ddf6547611b557268dbac6fa77c1c1cfb241dc4bd2ff6cb16fe83acd2df1fbaf",
+      "acceptedPayloadHashes": [
+        "ddf6547611b557268dbac6fa77c1c1cfb241dc4bd2ff6cb16fe83acd2df1fbaf"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climb:rifle",
+      "currentPayloadHash": "fc3826ed1fae830c8a06dde46852cf56da83ca24cd44dabe1fbaf994daee2b9b",
+      "acceptedPayloadHashes": [
+        "fc3826ed1fae830c8a06dde46852cf56da83ca24cd44dabe1fbaf994daee2b9b"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climb:rpg",
+      "currentPayloadHash": "99b58a252fadfa4a9860a2b71b5fa84df8aea31d3979271fa5d235a6011a1ec8",
+      "acceptedPayloadHashes": [
+        "99b58a252fadfa4a9860a2b71b5fa84df8aea31d3979271fa5d235a6011a1ec8"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing$tac:minigun",
+      "currentPayloadHash": "0b0df6af7105263c1f872eba83f6950b32c1e9bfe7ebc52f682f49729ab3f6ff",
+      "acceptedPayloadHashes": [
+        "0b0df6af7105263c1f872eba83f6950b32c1e9bfe7ebc52f682f49729ab3f6ff"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:fire$tac:minigun",
+      "currentPayloadHash": "0b92afaf08048e93a635e36fcfd8f5c3d70d6390aeda4756181e8b72e53c4000",
+      "acceptedPayloadHashes": [
+        "0b92afaf08048e93a635e36fcfd8f5c3d70d6390aeda4756181e8b72e53c4000"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:fire:pistol",
+      "currentPayloadHash": "72ab531e19095d6f42594b678250983e97e5f3251ac9ae0c027b9d0e5a500b82",
+      "acceptedPayloadHashes": [
+        "72ab531e19095d6f42594b678250983e97e5f3251ac9ae0c027b9d0e5a500b82"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:fire:rifle",
+      "currentPayloadHash": "419672e9eaaad3c6b795796333afe0b644fe3b64941193e9e03ab9f57eea484f",
+      "acceptedPayloadHashes": [
+        "419672e9eaaad3c6b795796333afe0b644fe3b64941193e9e03ab9f57eea484f"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:fire:rpg",
+      "currentPayloadHash": "2ed82baf2e22fc02ec9d5a18681c9a1ccc48d6ddd2da3a0dc2aad06a0fa4e5bb",
+      "acceptedPayloadHashes": [
+        "2ed82baf2e22fc02ec9d5a18681c9a1ccc48d6ddd2da3a0dc2aad06a0fa4e5bb"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:pistol",
+      "currentPayloadHash": "afa3844cf44090d72589aa876f05e9e81700be0db2c97248381a1729051addbc",
+      "acceptedPayloadHashes": [
+        "afa3844cf44090d72589aa876f05e9e81700be0db2c97248381a1729051addbc"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:rifle",
+      "currentPayloadHash": "a3402961faf23483148e7afbc4a4863b39ab9d59eda71cc3644c23317474ba40",
+      "acceptedPayloadHashes": [
+        "a3402961faf23483148e7afbc4a4863b39ab9d59eda71cc3644c23317474ba40"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:climbing:rpg",
+      "currentPayloadHash": "bf606a7686faab8330b1c17aa0b2344053a9a5b293b9c3f3be9c0efbc52f7e29",
+      "acceptedPayloadHashes": [
+        "bf606a7686faab8330b1c17aa0b2344053a9a5b293b9c3f3be9c0efbc52f7e29"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold$tac:minigun",
+      "currentPayloadHash": "9217f78e6b1bda13596548f60d4f35c698e58187ef61b47d8889770497749824",
+      "acceptedPayloadHashes": [
+        "9217f78e6b1bda13596548f60d4f35c698e58187ef61b47d8889770497749824"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:fire$tac:minigun",
+      "currentPayloadHash": "9ef64060d161aa5128ee1516b1130046eff9b9730da575482e189f48e2184e30",
+      "acceptedPayloadHashes": [
+        "9ef64060d161aa5128ee1516b1130046eff9b9730da575482e189f48e2184e30"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:fire:pistol",
+      "currentPayloadHash": "4cc6b0da4f8c9e46c544f47aaec82d7219df624125a1cb580f3a0ead398201b2",
+      "acceptedPayloadHashes": [
+        "4cc6b0da4f8c9e46c544f47aaec82d7219df624125a1cb580f3a0ead398201b2"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:fire:rifle",
+      "currentPayloadHash": "b55db0e4d4df9d4cba95d2544fae4be19d0ba8a156d491f99666bd3daa436ce1",
+      "acceptedPayloadHashes": [
+        "b55db0e4d4df9d4cba95d2544fae4be19d0ba8a156d491f99666bd3daa436ce1"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:fire:rpg",
+      "currentPayloadHash": "be03893a0d3cab70f173bfbea79525d4f92ac41775c563a7bc78d368a0cebea7",
+      "acceptedPayloadHashes": [
+        "be03893a0d3cab70f173bfbea79525d4f92ac41775c563a7bc78d368a0cebea7"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:pistol",
+      "currentPayloadHash": "aefc562e3ec8a1a2004719c43ea5f99a4ef840a91016081fc6d37b0177054402",
+      "acceptedPayloadHashes": [
+        "aefc562e3ec8a1a2004719c43ea5f99a4ef840a91016081fc6d37b0177054402"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:rifle",
+      "currentPayloadHash": "3a8b3f15b18d3401378683dcd78fb864efa9b33c2824164430ad3e39ed9667e4",
+      "acceptedPayloadHashes": [
+        "3a8b3f15b18d3401378683dcd78fb864efa9b33c2824164430ad3e39ed9667e4"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:hold:rpg",
+      "currentPayloadHash": "87cd5c2a5cfbc64226dad88b4e629631d7c6247c1765efb4604c1a287acd6235",
+      "acceptedPayloadHashes": [
+        "87cd5c2a5cfbc64226dad88b4e629631d7c6247c1765efb4604c1a287acd6235"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:idle",
+      "currentPayloadHash": "0eb4d266ddb40489ec883855ff2797c98b628759c457ad0577f64c814b65174c",
+      "acceptedPayloadHashes": [
+        "0eb4d266ddb40489ec883855ff2797c98b628759c457ad0577f64c814b65174c"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:mainhand:grenade",
+      "currentPayloadHash": "925c152f226180259f5466613c61481ae0ea7a2cfc0677e2828ee931863ab977",
+      "acceptedPayloadHashes": [
+        "925c152f226180259f5466613c61481ae0ea7a2cfc0677e2828ee931863ab977"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:offhand:grenade",
+      "currentPayloadHash": "8f61d508c914fe241fd1d9c8d89a627c0c04ec4141127d5db0a536fc7ebc3736",
+      "acceptedPayloadHashes": [
+        "8f61d508c914fe241fd1d9c8d89a627c0c04ec4141127d5db0a536fc7ebc3736"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:reload:pistol",
+      "currentPayloadHash": "b85954a5f9f8d59be8063c8eab7b12eee30b3b8a324048fd33d8bfb149e7e6f5",
+      "acceptedPayloadHashes": [
+        "b85954a5f9f8d59be8063c8eab7b12eee30b3b8a324048fd33d8bfb149e7e6f5"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:reload:rifle",
+      "currentPayloadHash": "e288eda54f53d2412263820d7a2f58a1c863af1900b6b7bad95f0b999d3ca986",
+      "acceptedPayloadHashes": [
+        "e288eda54f53d2412263820d7a2f58a1c863af1900b6b7bad95f0b999d3ca986"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:reload:rpg",
+      "currentPayloadHash": "350d82a068c8dbb8b7fb86add025163bdf826623ce197e2d276e396c887956ae",
+      "acceptedPayloadHashes": [
+        "350d82a068c8dbb8b7fb86add025163bdf826623ce197e2d276e396c887956ae"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:run",
+      "currentPayloadHash": "317b7890bb4c04725d628d14cad5d685ee9da581ababe02cbb992a7eb87705e5",
+      "acceptedPayloadHashes": [
+        "317b7890bb4c04725d628d14cad5d685ee9da581ababe02cbb992a7eb87705e5"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:run$tac:minigun",
+      "currentPayloadHash": "e7486ab5f989e8c6c68aa8b1f6621e2e5df7b0d3365ddeac28f142f9a24b6db3",
+      "acceptedPayloadHashes": [
+        "e7486ab5f989e8c6c68aa8b1f6621e2e5df7b0d3365ddeac28f142f9a24b6db3"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:run:pistol",
+      "currentPayloadHash": "f90200ec8d8c8c218ee7a0bee64ce41349d5e2f78f28eae5e55edda969b60415",
+      "acceptedPayloadHashes": [
+        "f90200ec8d8c8c218ee7a0bee64ce41349d5e2f78f28eae5e55edda969b60415"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:run:rifle",
+      "currentPayloadHash": "644da8787186aab5341372d0d52eed192b9737d0591c4279d04ba011e9d8e2a1",
+      "acceptedPayloadHashes": [
+        "644da8787186aab5341372d0d52eed192b9737d0591c4279d04ba011e9d8e2a1"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:run:rpg",
+      "currentPayloadHash": "6692436e56683044dde889935b9efa5d6314339fff6daf6036728c2ec07eb21d",
+      "acceptedPayloadHashes": [
+        "6692436e56683044dde889935b9efa5d6314339fff6daf6036728c2ec07eb21d"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "tac:walk",
+      "currentPayloadHash": "8761c40a30933f63d4725e88f3666d735484cf904c1226ca75f776fdcd75a4ef",
+      "acceptedPayloadHashes": [
+        "8761c40a30933f63d4725e88f3666d735484cf904c1226ca75f776fdcd75a4ef"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "use_mainhand",
+      "currentPayloadHash": "539fc38106116345d8781aa3eed1584283ef50c40d14f87b3ca142df0e7d0c9c",
+      "acceptedPayloadHashes": [
+        "539fc38106116345d8781aa3eed1584283ef50c40d14f87b3ca142df0e7d0c9c"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "use_mainhand:slashblade",
+      "currentPayloadHash": "91f614f1642cef50fef2c55a2ca8ba9aad249c0af4f67e75a2216226fe1bdd1f",
+      "acceptedPayloadHashes": [
+        "91f614f1642cef50fef2c55a2ca8ba9aad249c0af4f67e75a2216226fe1bdd1f"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "use_offhand",
+      "currentPayloadHash": "d6269dd7cdabaf94c90c8178711f51a35c430d3abbdec06139592fe94a79d266",
+      "acceptedPayloadHashes": [
+        "d6269dd7cdabaf94c90c8178711f51a35c430d3abbdec06139592fe94a79d266"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "walk",
+      "currentPayloadHash": "b67dfb28eacfc0452fdec3dd2616972223bc19c1461d2965d7fce8fa7863d431",
+      "acceptedPayloadHashes": [
+        "b67dfb28eacfc0452fdec3dd2616972223bc19c1461d2965d7fce8fa7863d431"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "——尾巴晃动——",
+      "currentPayloadHash": "cdadfd1d3489cfcf40f07df692af201a9dcc8e346c2afe307f08294ab180f9ee",
+      "acceptedPayloadHashes": [
+        "cdadfd1d3489cfcf40f07df692af201a9dcc8e346c2afe307f08294ab180f9ee"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "——显示隐藏——",
+      "currentPayloadHash": "9e70924b05dc2722a7e143343d16373182a724544528c84130d8738811fabc6c",
+      "acceptedPayloadHashes": [
+        "9e70924b05dc2722a7e143343d16373182a724544528c84130d8738811fabc6c"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "——桃的额外动画——",
+      "currentPayloadHash": "9792c1f094e058eff6e4a8cd1a6af31d3d5cf8251e8f2d96d09d2c6f4448d1e4",
+      "acceptedPayloadHashes": [
+        "9792c1f094e058eff6e4a8cd1a6af31d3d5cf8251e8f2d96d09d2c6f4448d1e4"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "——物理动画——",
+      "currentPayloadHash": "e4f31813e2d36c112f7b17187155ff19425b7071ab0956ca195f0000b6f142b0",
+      "acceptedPayloadHashes": [
+        "e4f31813e2d36c112f7b17187155ff19425b7071ab0956ca195f0000b6f142b0"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "——眨眼动画——",
+      "currentPayloadHash": "2097400f3878f4dcb15fc0711c9afed6a315b08b2d64799822a3107af57a371a",
+      "acceptedPayloadHashes": [
+        "2097400f3878f4dcb15fc0711c9afed6a315b08b2d64799822a3107af57a371a"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "——默认动画组——",
+      "currentPayloadHash": "91e3d5ec52925a86f20b0560d042dafa12d88b1cecb081062b2130b817bbaa11",
+      "acceptedPayloadHashes": [
+        "91e3d5ec52925a86f20b0560d042dafa12d88b1cecb081062b2130b817bbaa11"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "坐着发呆",
+      "currentPayloadHash": "01f60d56ceee35fe17e79a1d4eaffbf3344f6c79e0bb41365c28031f4b03a990",
+      "acceptedPayloadHashes": [
+        "01f60d56ceee35fe17e79a1d4eaffbf3344f6c79e0bb41365c28031f4b03a990"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "抻懒腰",
+      "currentPayloadHash": "13c5be74eaf38e6a2897a18d8ac0efbe35f23cd7cf1028637c3c5d7b2c34c5ac",
+      "acceptedPayloadHashes": [
+        "13c5be74eaf38e6a2897a18d8ac0efbe35f23cd7cf1028637c3c5d7b2c34c5ac"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "站立打盹",
+      "currentPayloadHash": "f94ee663e99d415b81a48b1acbb9c9788157f3398340ee842361c3f8a610ac17",
+      "acceptedPayloadHashes": [
+        "f94ee663e99d415b81a48b1acbb9c9788157f3398340ee842361c3f8a610ac17"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "站立打盹2",
+      "currentPayloadHash": "024edcf10666cdc3b82660f3f2e10e6a8c279f1dac2f5cd6ff26cbd1993df646",
+      "acceptedPayloadHashes": [
+        "024edcf10666cdc3b82660f3f2e10e6a8c279f1dac2f5cd6ff26cbd1993df646"
+      ]
+    },
+    {
+      "domain": "player/main",
+      "name": "鸭子坐",
+      "currentPayloadHash": "3337ad1951ed544f2ebca7602d4f3d8f52b60d1467f2dcd910aa35ed6c82fc6d",
+      "acceptedPayloadHashes": [
+        "3337ad1951ed544f2ebca7602d4f3d8f52b60d1467f2dcd910aa35ed6c82fc6d"
+      ]
+    }
+  ],
+  "dedupProfileHash": "baeac14d6cc6e611ac1bbac1e4777bdfff2e1cb8928c0374c4d478fc98ee23f9"
+}

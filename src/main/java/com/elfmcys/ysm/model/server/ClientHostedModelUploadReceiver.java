@@ -1,0 +1,452 @@
+package com.elfmcys.ysm.model.server;
+
+import com.elfmcys.ysm.model.domain.Hash256;
+import com.elfmcys.ysm.model.source.ModelAssetSelector;
+import com.elfmcys.ysm.model.source.ModelAssetSubject;
+import com.elfmcys.ysm.model.storage.ModelHashing;
+import com.elfmcys.ysm.network.NetworkHandler;
+import com.elfmcys.ysm.network.NetworkPayload;
+import com.elfmcys.ysm.network.message.model.ModelAssetProtoMapper;
+import com.elfmcys.ysm.network.message.model.PreparedTransfer;
+import com.elfmcys.ysm.network.message.model.ReceivedModelAssets;
+import com.elfmcys.ysm.network.protocol.AssetFragmentAssembler;
+import com.elfmcys.ysm.network.protocol.ProtocolLimits;
+import com.elfmcys.ysm.network.protocol.ProtocolUuid;
+import com.elfmcys.ysm.proto.network.model.ModelAssetsProto;
+import com.elfmcys.ysm.proto.network.protocol.v0.AssetTransferV0;
+import com.elfmcys.ysm.util.ProtoBytes;
+import net.minecraft.server.level.ServerPlayer;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.Executor;
+
+/**
+ * Bounded, memory-only staging receiver for client-hosted model assets.
+ * Staged assets are not published to the server catalog by this class.
+ */
+public final class ClientHostedModelUploadReceiver implements AutoCloseable {
+    private static final long INCOMPLETE_TIMEOUT_NANOS =
+            Duration.ofSeconds(30).toNanos();
+    private static final long HOSTED_TTL_NANOS =
+            Duration.ofMinutes(10).toNanos();
+    private static final long TERMINAL_TTL_NANOS =
+            Duration.ofMinutes(1).toNanos();
+
+    private final Executor workers;
+    private final Object lock = new Object();
+    private final Map<TransferKey, InboundUpload> incoming = new HashMap<>();
+    private final Map<HostedKey, HostedAsset> hosted = new HashMap<>();
+    private final Map<TransferKey, Long> terminal = new HashMap<>();
+
+    private long reservedBytes;
+    private boolean closed;
+
+    public ClientHostedModelUploadReceiver(Executor workers) {
+        this.workers = workers;
+    }
+
+    public void receive(ServerPlayer player,
+                        NetworkPayload<AssetTransferV0.AssetFragment> payload) {
+        try (payload) {
+            var fragment = payload.protobuf();
+            final UUID transferId;
+            final UUID requestId;
+
+            try {
+                transferId = ProtocolUuid.get(fragment.getTransferId());
+                requestId = ProtocolUuid.get(fragment.getRequestId());
+            } catch (RuntimeException error) {
+                return;
+            }
+
+            var key = new TransferKey(player.getUUID(), transferId);
+            InboundUpload upload;
+            boolean complete;
+
+            try {
+                synchronized (lock) {
+                    if (closed) {
+                        return;
+                    }
+
+                    pruneTerminal(System.nanoTime());
+                    if (terminal.containsKey(key)) {
+                        return;
+                    }
+
+                    upload = incoming.get(key);
+
+                    if (upload == null) {
+                        if (incoming.size() >= ProtocolLimits.MAX_IN_FLIGHT_TRANSFERS) {
+                            throw new IllegalArgumentException("Too many active uploads");
+                        }
+
+                        long encoded = fragment.getTransferSize();
+                        long decoded = fragment.getDecodedSize();
+
+                        if (encoded < 0 || decoded < 0
+                                || encoded > ProtocolLimits.MAX_ENCODED_ASSET_BYTES
+                                || decoded > ProtocolLimits.MAX_DECODED_ASSET_BYTES) {
+                            throw new IllegalArgumentException("Upload exceeds transfer limits");
+                        }
+
+                        long reservation = Math.addExact(encoded, decoded);
+                        if (reservation > ProtocolLimits.MAX_RESERVED_ASSET_BYTES - reservedBytes) {
+                            throw new IllegalArgumentException("Server upload memory budget is full");
+                        }
+
+                        var assembler = new AssetFragmentAssembler(
+                                payload,
+                                Math.toIntExact(Math.min(ProtocolLimits.MAX_ENCODED_ASSET_BYTES, Integer.MAX_VALUE)),
+                                Math.toIntExact(Math.min(ProtocolLimits.MAX_DECODED_ASSET_BYTES, Integer.MAX_VALUE)));
+
+                        upload = new InboundUpload(
+                                key, requestId, fragment.getResourceIndex(),
+                                assembler, reservation);
+
+                        incoming.put(key, upload);
+                        reservedBytes += reservation;
+                    } else {
+                        if (upload.processing) {
+                            return;
+                        }
+                        if (!upload.requestId.equals(requestId)
+                                || upload.resourceIndex != fragment.getResourceIndex()) {
+                            throw new IllegalArgumentException("Upload identity changed between fragments");
+                        }
+                        upload.assembly.add(payload);
+                    }
+
+                    upload.lastActivityNanos = System.nanoTime();
+                    complete = upload.assembly.isComplete();
+
+                    if (complete) {
+                        upload.processing = true;
+                    }
+                }
+            } catch (RuntimeException error) {
+                reject(player, key, requestId, fragment.getResourceIndex(),
+                        fragment.getFragmentIndex(), error.getMessage());
+                return;
+            }
+
+            sendCredit(player, transferId, requestId, fragment.getResourceIndex(),
+                    fragment.getFragmentIndex(),
+                    AssetTransferV0.ClientHostedModelUploadCreditStatus
+                            .CLIENT_HOSTED_MODEL_UPLOAD_CREDIT_GRANTED, "");
+
+            if (complete) {
+                var completedUpload = upload;
+                try {
+                    workers.execute(() -> completeUpload(player, key, completedUpload,
+                            fragment.getFragmentIndex()));
+                } catch (RuntimeException error) {
+                    reject(player, key, requestId, fragment.getResourceIndex(),
+                            fragment.getFragmentIndex(), "Upload processing could not be scheduled");
+                }
+            }
+        }
+    }
+
+    private void completeUpload(ServerPlayer player, TransferKey key,
+                                InboundUpload upload, int finalFragmentIndex) {
+        PreparedTransfer prepared = null;
+        HostedKey hostedKey;
+
+        try (var content = upload.assembly.acquireContent()) {
+            var manifest = upload.assembly.manifest();
+            var subject = validate(manifest, content);
+
+            hostedKey = new HostedKey(key.ownerId, subject.modelHash());
+            prepared = PreparedTransfer.modelAssets(
+                    upload.assembly.decodedSize(), content.acquire(), manifest);
+
+            HostedAsset previous = null;
+            boolean stored = false;
+
+            synchronized (lock) {
+                if (!closed && incoming.remove(key, upload)) {
+                    previous = hosted.put(hostedKey,
+                            new HostedAsset(prepared, upload.reservedBytes,
+                                    System.nanoTime() + HOSTED_TTL_NANOS));
+                    terminal.put(key, System.nanoTime() + TERMINAL_TTL_NANOS);
+                    stored = true;
+                } else if (incoming.remove(key, upload)) {
+                    reservedBytes -= upload.reservedBytes;
+                }
+            }
+
+            if (previous != null) {
+                previous.close();
+                synchronized (lock) {
+                    reservedBytes -= previous.reservedBytes;
+                }
+            }
+
+            if (!stored) {
+                prepared.close();
+                prepared = null;
+                return;
+            }
+
+            prepared = null; // Ownership moved to the in-memory hosted cache.
+
+            sendCredit(player, key.transferId, upload.requestId,
+                    upload.resourceIndex, finalFragmentIndex,
+                    AssetTransferV0.ClientHostedModelUploadCreditStatus
+                            .CLIENT_HOSTED_MODEL_UPLOAD_TRANSFER_ACCEPTED, "");
+        } catch (Throwable error) {
+            reject(player, key, upload.requestId, upload.resourceIndex,
+                    finalFragmentIndex, error.getMessage());
+        } finally {
+            if (prepared != null) {
+                prepared.close();
+            }
+            upload.assembly.close();
+        }
+    }
+
+    private static ModelAssetSubject.Model validate(
+            ModelAssetsProto.ModelAssetManifest manifest,
+            com.elfmcys.ysm.buffer.NativeBuffer content) throws IOException {
+        if (manifest == null || !manifest.hasSubject() || !manifest.hasSelector()) {
+            throw new IOException("Upload manifest is incomplete");
+        }
+
+        var subject = ModelAssetProtoMapper.fromProto(manifest.getSubject());
+        var selector = ModelAssetProtoMapper.fromProto(manifest.getSelector());
+
+        if (!(subject instanceof ModelAssetSubject.Model model)) {
+            throw new IOException("Upload does not contain a model subject");
+        }
+
+        if (!(selector instanceof ModelAssetSelector.RenderTarget target)
+                || !target.components().contains(
+                        ModelAssetSelector.RenderTargetComponent.DEFINITION)) {
+            throw new IOException("Upload does not contain a render-target definition");
+        }
+
+        if (manifest.getChunks().length() == 0) {
+            throw new IOException("Upload contains no model chunks");
+        }
+
+        try (var assets = new ReceivedModelAssets(manifest, content.acquire())) {
+            long expectedOffset = 0;
+            Set<String> names = new HashSet<>();
+
+            for (var chunk : manifest.getChunks()) {
+                if (chunk.getName().isBlank() || !names.add(chunk.getName())
+                        || chunk.getRawOffset() != expectedOffset
+                        || chunk.getRawSize() <= 0) {
+                    throw new IOException("Upload contains an invalid chunk layout");
+                }
+
+                expectedOffset = Math.addExact(expectedOffset, chunk.getRawSize());
+
+                if (chunk.getContentHash().length() != 0) {
+                    try (var data = assets.chunk(chunk)) {
+                        if (!ProtoBytes.equals(
+                                ModelHashing.blake3(data), chunk.getContentHash())) {
+                            throw new IOException("Uploaded chunk hash does not match");
+                        }
+                    }
+                }
+            }
+
+            if (expectedOffset != assets.attachmentSize()) {
+                throw new IOException("Upload attachment layout is incomplete");
+            }
+        } catch (ArithmeticException error) {
+            throw new IOException("Upload chunk layout overflowed", error);
+        }
+
+        return model;
+    }
+
+    private void reject(ServerPlayer player, TransferKey key, UUID requestId,
+                        int resourceIndex, int fragmentIndex, String reason) {
+        InboundUpload removed;
+
+        synchronized (lock) {
+            removed = incoming.remove(key);
+            if (removed != null) {
+                reservedBytes -= removed.reservedBytes;
+            }
+            terminal.put(key, System.nanoTime() + TERMINAL_TTL_NANOS);
+        }
+
+        if (removed != null) {
+            removed.assembly.close();
+        }
+
+        sendCredit(player, key.transferId, requestId, resourceIndex, fragmentIndex,
+                AssetTransferV0.ClientHostedModelUploadCreditStatus
+                        .CLIENT_HOSTED_MODEL_UPLOAD_TRANSFER_REJECTED,
+                reason == null ? "Upload rejected" : reason);
+    }
+
+    private static void sendCredit(ServerPlayer player, UUID transferId, UUID requestId,
+                                   int resourceIndex, int fragmentIndex,
+                                   AssetTransferV0.ClientHostedModelUploadCreditStatus status,
+                                   String reason) {
+        if (player.connection == null || !player.connection.isAcceptingMessages()) {
+            return;
+        }
+
+        var credit = AssetTransferV0.ClientHostedModelUploadCredit.newInstance()
+                .setResourceIndex(resourceIndex)
+                .setFragmentIndex(fragmentIndex)
+                .setStatus(status)
+                .setReason(reason);
+
+        ProtocolUuid.set(credit.getMutableTransferId(), transferId);
+        ProtocolUuid.set(credit.getMutableRequestId(), requestId);
+        NetworkHandler.sendToClientPlayer(credit, player);
+    }
+
+    public void cleanUp() {
+        long now = System.nanoTime();
+        var expiredIncoming = new ArrayList<InboundUpload>();
+        var expiredHosted = new ArrayList<HostedAsset>();
+
+        synchronized (lock) {
+            incoming.entrySet().removeIf(entry -> {
+                var upload = entry.getValue();
+                if (!upload.processing
+                        && now - upload.lastActivityNanos > INCOMPLETE_TIMEOUT_NANOS) {
+                    expiredIncoming.add(upload);
+                    reservedBytes -= upload.reservedBytes;
+                    terminal.put(entry.getKey(), now + TERMINAL_TTL_NANOS);
+                    return true;
+                }
+                return false;
+            });
+
+            hosted.entrySet().removeIf(entry -> {
+                if (entry.getValue().expiresAtNanos <= now) {
+                    expiredHosted.add(entry.getValue());
+                    reservedBytes -= entry.getValue().reservedBytes;
+                    return true;
+                }
+                return false;
+            });
+
+            pruneTerminal(now);
+        }
+
+        expiredIncoming.forEach(upload -> upload.assembly.close());
+        expiredHosted.forEach(HostedAsset::close);
+    }
+
+    public void playerDisconnected(UUID playerId) {
+        var removedIncoming = new ArrayList<InboundUpload>();
+        var removedHosted = new ArrayList<HostedAsset>();
+
+        synchronized (lock) {
+            incoming.entrySet().removeIf(entry -> {
+                if (entry.getKey().ownerId.equals(playerId)) {
+                    removedIncoming.add(entry.getValue());
+                    reservedBytes -= entry.getValue().reservedBytes;
+                    return true;
+                }
+                return false;
+            });
+
+            hosted.entrySet().removeIf(entry -> {
+                if (entry.getKey().ownerId.equals(playerId)) {
+                    removedHosted.add(entry.getValue());
+                    reservedBytes -= entry.getValue().reservedBytes;
+                    return true;
+                }
+                return false;
+            });
+
+            terminal.keySet().removeIf(key -> key.ownerId.equals(playerId));
+        }
+
+        removedIncoming.forEach(upload -> upload.assembly.close());
+        removedHosted.forEach(HostedAsset::close);
+    }
+
+    public int hostedCount() {
+        synchronized (lock) {
+            return hosted.size();
+        }
+    }
+
+    private void pruneTerminal(long now) {
+        terminal.entrySet().removeIf(entry -> entry.getValue() <= now);
+    }
+
+    @Override
+    public void close() {
+        var removedIncoming = new ArrayList<InboundUpload>();
+        var removedHosted = new ArrayList<HostedAsset>();
+
+        synchronized (lock) {
+            if (closed) {
+                return;
+            }
+            closed = true;
+            removedIncoming.addAll(incoming.values());
+            removedHosted.addAll(hosted.values());
+            incoming.clear();
+            hosted.clear();
+            terminal.clear();
+            reservedBytes = 0;
+        }
+
+        removedIncoming.forEach(upload -> upload.assembly.close());
+        removedHosted.forEach(HostedAsset::close);
+    }
+
+    private record TransferKey(UUID ownerId, UUID transferId) {
+    }
+
+    private record HostedKey(UUID ownerId, Hash256 modelHash) {
+    }
+
+    private static final class InboundUpload {
+        private final TransferKey key;
+        private final UUID requestId;
+        private final int resourceIndex;
+        private final AssetFragmentAssembler assembly;
+        private final long reservedBytes;
+        private long lastActivityNanos;
+        private boolean processing;
+
+        private InboundUpload(TransferKey key, UUID requestId, int resourceIndex,
+                              AssetFragmentAssembler assembly, long reservedBytes) {
+            this.key = key;
+            this.requestId = requestId;
+            this.resourceIndex = resourceIndex;
+            this.assembly = assembly;
+            this.reservedBytes = reservedBytes;
+            this.lastActivityNanos = System.nanoTime();
+        }
+    }
+
+    private static final class HostedAsset implements AutoCloseable {
+        private final PreparedTransfer payload;
+        private final long reservedBytes;
+        private final long expiresAtNanos;
+
+        private HostedAsset(PreparedTransfer payload, long reservedBytes, long expiresAtNanos) {
+            this.payload = payload;
+            this.reservedBytes = reservedBytes;
+            this.expiresAtNanos = expiresAtNanos;
+        }
+
+        @Override
+        public void close() {
+            payload.close();
+        }
+    }
+}
